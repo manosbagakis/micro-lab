@@ -1,0 +1,42 @@
+IN 10H
+LXI B,03E8H
+MVI H,01H ;add 1 or -1 
+JMP MAIN
+
+;routine definitions
+COUNT_ENABLE:
+		LDA 2000H
+		RAR	
+		JNC COUNT_ENABLE	;check LSB for ON
+		ANI 78H		;get upper boundary
+		RAR
+		RAR
+		RAR
+		MOV E,A 		;E has the upper boundary of 4 MSB dip switches
+RET
+
+;main program
+MAIN: 
+	MVI D,00H ;d has the current count number
+	CALL COUNT_ENABLE	;check for lsb stop and upper boundary 
+
+COUNT:		MOV A,D
+		CMA
+		STA 3000H
+		CMA
+		CMP E			;if cnt==E reached upper bndry change direction
+		JZ COUNT_DOWN		
+		CPI 00H		;else if cnt==0 reached zero change direction
+		JZ COUNT_UP
+		JMP CONTINUE		;else continue
+COUNT_UP:	MVI H,01H		;if up count then adder = 1 
+		JMP CONTINUE
+COUNT_DOWN:	MVI H,FFH		;if down count then adder = -1 
+CONTINUE:	ADD H			;add the adder
+		MOV D,A		;load current count
+		CALL DELB	;delay 1sec BC = 1000d msec
+		CALL COUNT_ENABLE
+		JMP COUNT		
+END
+
+

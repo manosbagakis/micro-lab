@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega16</DEVICE>
+ <WORKING_DIR>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_tmp_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>2</LINE></_tmp_>
+  <start><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>8</LINE></start>
+  <endless_loop><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>21</LINE></endless_loop>
+  <get_temp><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>27</LINE></get_temp>
+  <one_wire_reset><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>87</LINE></one_wire_reset>
+  <not_connected><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>73</LINE></not_connected>
+  <one_wire_transmit_byte><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>130</LINE></one_wire_transmit_byte>
+  <wait_measure_to_end><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>37</LINE></wait_measure_to_end>
+  <one_wire_receive_bit><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>144</LINE></one_wire_receive_bit>
+  <one_wire_receive_byte><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>114</LINE></one_wire_receive_byte>
+  <calculate_result><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>62</LINE></calculate_result>
+  <print><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>77</LINE></print>
+  <wait_usec><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>189</LINE></wait_usec>
+  <loop_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>117</LINE></loop_>
+  <_one_more_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>133</LINE></_one_more_>
+  <one_wire_transmit_bit><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>166</LINE></one_wire_transmit_bit>
+  <wait_msec><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_1\askisi8_1.asm</FILE><LINE>198</LINE></wait_msec>
+ </LABELS>
+</ASSEMBLER_INFO>

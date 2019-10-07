@@ -1,0 +1,68 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.42</VERSION>
+ <DEVICE>ATmega16</DEVICE>
+ <WORKING_DIR>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files\Atmel\AVR Tools\AvrAssembler2\Appnotes\m16def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.map</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <_tmp_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>2</LINE></_tmp_>
+  <start><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>14</LINE></start>
+  <lcd_init><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>415</LINE></lcd_init>
+  <main_p><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>27</LINE></main_p>
+  <get_temp><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>134</LINE></get_temp>
+  <print><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>33</LINE></print>
+  <not_connected1><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>95</LINE></not_connected1>
+  <positive_print><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>67</LINE></positive_print>
+  <skip_sign><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>80</LINE></skip_sign>
+  <lcd_data><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>407</LINE></lcd_data>
+  <print_temp><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>99</LINE></print_temp>
+  <print_disconnect><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>255</LINE></print_disconnect>
+  <print_dec><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>102</LINE></print_dec>
+  <ten_loop><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>107</LINE></ten_loop>
+  <units><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>113</LINE></units>
+  <print_3digits><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>119</LINE></print_3digits>
+  <print_2digits><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>123</LINE></print_2digits>
+  <print_1digit><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>127</LINE></print_1digit>
+  <end><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>131</LINE></end>
+  <one_wire_reset><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>276</LINE></one_wire_reset>
+  <not_connected><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>180</LINE></not_connected>
+  <one_wire_transmit_byte><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>317</LINE></one_wire_transmit_byte>
+  <wait_measure_to_end><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>144</LINE></wait_measure_to_end>
+  <one_wire_receive_bit><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>331</LINE></one_wire_receive_bit>
+  <one_wire_receive_byte><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>303</LINE></one_wire_receive_byte>
+  <calculate_result><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>169</LINE></calculate_result>
+  <print1><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>184</LINE></print1>
+  <get_temp_from_keyb><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>191</LINE></get_temp_from_keyb>
+  <loop_1st><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>196</LINE></loop_1st>
+  <scan_keypad_rising_edge><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>591</LINE></scan_keypad_rising_edge>
+  <keypad_to_hex><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>481</LINE></keypad_to_hex>
+  <loop_2nd><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>211</LINE></loop_2nd>
+  <loop_3rd><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>223</LINE></loop_3rd>
+  <loop_4th><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>239</LINE></loop_4th>
+  <wait_usec><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>458</LINE></wait_usec>
+  <loop_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>306</LINE></loop_>
+  <_one_more_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>320</LINE></_one_more_>
+  <one_wire_transmit_bit><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>353</LINE></one_wire_transmit_bit>
+  <write_2_nibbles><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>380</LINE></write_2_nibbles>
+  <lcd_command><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>398</LINE></lcd_command>
+  <wait_msec><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>467</LINE></wait_msec>
+  <keypad_to_ascii><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>534</LINE></keypad_to_ascii>
+  <scan_keypad><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>619</LINE></scan_keypad>
+  <scan_row><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>637</LINE></scan_row>
+  <back_><FILE>C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm</FILE><LINE>639</LINE></back_>
+ </LABELS>
+</ASSEMBLER_INFO>

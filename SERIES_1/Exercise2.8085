@@ -1,0 +1,97 @@
+IN 10H
+;Αρχικοποίηση τιμών για τύπωμα στα 7 seg displays στο κενό(αρχικά σβηστά displays)
+MVI A,10H
+STA 0B30H
+STA 0B31H
+STA 0B32H
+STA 0B33H
+STA 0B34H
+STA 0B35H
+LXI D,0B30H
+CALL STDM
+CALL DCD
+	
+MVI C,01H	;Μετρητής πλήθους διακοπών. Αρχικα 1 αφού στο πρωτο print δεν θα αυξηθει ο C
+MVI B,00H	;Στον L το current output της μέτρησης στα LED (3000H)
+
+MVI A,0DH	;Μάσκα ώστε να επιτρέπονται διακοπές RST 6.5 (Αυτές προκαλούνται απο το INTRPT)
+SIM
+EI
+JMP LOOP1	;’λμα στο κυρίως πρόγραμμα
+
+CUSTOM_DELAY:
+PUSH PSW
+	LXI D,0032H	;Στο ζεύγος D-E ο μισός χρόνος για την καθυστέρηση 100ms αφού καλώ 2 φορές ώστε να μην τρεμοπαιζει η οθόνη
+
+	MSEC: MVI A,8CH
+	NOP
+	NOP
+	LOOPDELAY: DCR A
+		JNZ LOOPDELAY
+		NOP 
+		DCX D
+		MOV A,D
+		ORA E
+	JNZ MSEC
+POP PSW
+RET
+
+;Διαδικάσία με την οποία υπολογίζεται το MOD του πλήθους των Intrpt's με το 16 και τυπώνεται στο δεξιότερο 7 segment display
+CALC_16_MODULO:
+	PUSH PSW
+	MOV A,C	;Στον C το πλήθος διακοπών*2 λόγω bug του TSIK	
+	RRC		;Shift προς τα αριστερά ώστε να διεραίσουμε το πλήθος των διακοπών με το 2 αφού σε καθε πατημα υπαρχει bug και παράγονται 2 διακοπές
+	ANI 0FH	;Το υπόλοιπο με το 16 είναι ίσο με τα 4 LSB ψηφία του πλήθους
+	STA 0B30H	;Μεταφορά αποτελεσμάτων στη θέση για τη DCD
+	POP PSW
+RET
+
+INTR_ROUTINE:
+	PUSH PSW
+	LDA 2000H	;’ν το LSB των dip switches είναι off τότε δεν αντιλαμβάνομαι διακοπες(υπάρχει γιατι σε καθε φορά μας κρατούσε μία διακοπή)
+	RAR
+	JNC EXIT_INT
+	CALL CALC_16_MODULO
+LEAVE_INT:
+		INR C		;Αύξηση του πλήθους των διακοπών σε κάθε έγκυρη διακοπή
+EXIT_INT:	
+		EI	
+		POP PSW	
+RET
+
+;Κυρίως πρόγραμμα (το λέμε LOOP1 αφού έτσι και στο βιβλίο
+LOOP1:	
+	LDA 2000H		;Είσοδος απο DIP Switches
+	CPI 00H
+	JNZ ALLOW_INTR	;’ν είναι ΟΝ το LSB τότε ενεργοποίησε τις διακοπές αλλιώς όχι
+BLOCK_INTR:	MVI A,00H	;Παρεμπόδισε με μάσκα κάθε διακοπη
+		SIM
+		EI
+		JMP CONTINUE_CNT	;Συνέχισε το μέτρημα
+ALLOW_INTR:	MVI A,0DH		;Ενεργοποίησε τις διακοπές RST6.5
+		SIM
+		EI
+CONTINUE_CNT: MOV A,B		;Μεταφέρω στα LEDs την τρέχουσα έξοδο
+		CMA
+		STA 3000H
+		CMA
+		INR A			;Επόμενη μέτρηση
+		ADI 0FH		;Εξασφαλίζεται απεικόνιση στα 4 MSB's
+		MOV B,A		;Κρατάμε το current output απο τον accumulator	
+		
+
+		;Αντι για μια μεγάλη καθυστέρηση κάνουμε 2 μικρότερες ώστε να μην διακόπτεται το τύπωμα στα segments
+		CALL CUSTOM_DELAY
+		
+
+		LXI D,0B30H	;Εδώ ξεκινάνε τα δεδομένα προς τα displays
+		CALL STDM
+		CALL DCD
+
+
+		CALL CUSTOM_DELAY
+
+
+JMP LOOP1 				;Συνεχές μέτρημα
+END
+

@@ -1,0 +1,2 @@
+@ECHO OFF
+"C:\Program Files\Atmel\AVR Tools\AvrAssembler2\avrasm2.exe" -S "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\labels.tmp" -fI -W+ie -C V2E -o "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.hex" -d "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.obj" -e "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.eep" -m "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.map" "C:\Documents and Settings\mlab.STUDENTVM\Desktop\askisi8_2\askisi8_2.asm"

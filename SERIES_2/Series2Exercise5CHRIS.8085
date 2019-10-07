@@ -1,0 +1,133 @@
+IN 10H ; disable memory protection
+MVI A,10H ; initialize 7-segment value  
+STA 0B00H 
+STA 0B01H 
+STA 0B04H
+STA 0B05H
+MVI A,00H
+STA 0B02H
+STA 0B03H
+
+LXI D,0B00H ; store these values to 7-segments
+CALL STDM 
+CALL DCD
+
+
+
+JMP GET_INPUT1 ; for the first time ignore any INCR,CDR button
+
+
+CHECK_INCR: ; after 1st input check if increase
+	CALL DCD
+	CALL KIND
+	CPI 83H
+	JZ INCREASE
+	JMP CHECK_DECR
+GET_INPUT1: ; read the first input
+	CALL DCD
+	CALL KIND
+CHECK_DECR:	; check if decrease ( first time if decr is input, it will set 00 to 00 -> no change_
+	CPI 81H
+	JZ DECREASE
+	
+
+TO_FIRST: ; read first input number , until correct is given
+	CPI 10H
+	JNC GET_INPUT1
+
+GET_INPUT2: ; read second input number , until correct is given
+	MOV B,A ;  store first input valid number in B
+	CALL KIND
+	CPI 10H
+	JNC GET_INPUT2
+
+PRINT_INPUT12: ;  if I read 2 valid numbers
+	MOV C,A ; store second one in C ( B,C have the two digits)
+	STA 0B04H ; print them in 2 left segments
+	MOV A,B
+	STA 0B05H
+	LXI D,0B00H
+	CALL STDM
+	CALL DCD
+
+ADD_OR_MUL: ;after reading them decide wheter to add or mul them 
+	CALL DCD ; ?
+	CALL KIND 
+	CPI 0FH ;  do i add ?
+	JZ DO_MUL
+	CPI 0AH  ; do i mul ? 
+	JNZ ADD_OR_MUL ; if neither A/F is input wait untill input is one of A/F
+
+DO_ADD: ; add number , store result in B
+	MOV A,B
+	ADD C ; A has the sum of two numbers 
+	MOV B,A ; b has the sum result
+	JMP PRINT_RESULT ; go to printing
+
+DO_MUL: ; mul 2 numbers , store result in B
+	MOV D,B
+	
+LOOP1:
+	MOV A,C
+	CPI 01H
+	JZ PRINT_RESULT
+	DCR A
+	MOV C,A
+	MOV A,B
+	ADD D
+	MOV B,A ; b has the mul result
+	JMP LOOP1
+
+PRINT_RESULT: ; B has the result to be printed ( either from add/mul)
+	MOV A,B 
+	ANI 0FH ; mask each 4bit and store them in  2 right segments 
+	STA 0B00H
+	MOV A,B
+	ANI F0H
+	RRC
+	RRC
+	RRC
+	RRC
+	STA 0B01H
+	LXI D,0B00H
+	CALL STDM 
+	CALL DCD
+	JMP CHECK_INCR
+
+INCREASE: ; in case incr is given after sum/mul of 2 numbers add it to 2 middle segments
+	LDA 0B03H ; read current value of acc
+	RLC
+	RLC
+	RLC
+	RLC	
+	MOV C,A ; 
+	LDA 0B02H
+	ADD C ; A has acc value
+	ADD B ; A has new value  , acc = acc + b  ( b is the mul/sum result)
+	MOV C,A ; now mask each 4 bit and store it to 2 middle segments
+	ANI 0FH
+	STA 0B02H
+	MOV A,C
+	ANI F0H
+	RRC
+	RRC
+	RRC
+	RRC
+	STA 0B03H
+	LXI D,0B00H
+	CALL STDM
+	CALL DCD
+JMP GET_INPUT1 
+
+	 
+DECREASE: ; if decrease button is pressed set middle segments to zero 
+	MVI A,00H
+	STA 0B02H
+	STA 0B03H
+	LXI D,0B00H
+	CALL STDM 
+	CALL DCD
+JMP GET_INPUT1
+	
+  
+END
