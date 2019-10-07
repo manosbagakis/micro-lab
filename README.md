@@ -13,7 +13,8 @@ Series 4-8 contain the following ARM implementations:
 
 
 These projects were created by the following team:
-[Arvanitis Christos](https://github.com/arvchristos)
-[Bagakis Manos](https://github.com/manosbagakis)
-Bairaktari Konstantina konstantina.brk@gmail.com
+
+1. [Arvanitis Christos](https://github.com/arvchristos)
+2. [Bagakis Manos](https://github.com/manosbagakis)
+3. Bairaktari Konstantina konstantina.brk@gmail.com
 
