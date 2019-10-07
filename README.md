@@ -10,3 +10,10 @@ Series 4-8 contain the following ARM implementations:
 4. Logical gates simulation
 5. Home Security System implementation featuring control panel, LCD module and counter countdowns.
 6. Driver implementation for thermal sensors.
+
+
+These projects were created by the following team:
+[Arvanitis Christos](https://github.com/arvchristos)
+[Bagakis Manos](https://github.com/manosbagakis)
+Bairaktari Konstantina konstantina.brk@gmail.com
+
