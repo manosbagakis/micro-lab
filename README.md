@@ -16,5 +16,5 @@ These projects were created by the following team:
 
 1. [Arvanitis Christos](https://github.com/arvchristos)
 2. [Bagakis Manos](https://github.com/manosbagakis)
-3. Bairaktari Konstantina konstantina.brk@gmail.com
+3. [Bairaktari Konstantina](https://github.com/showerDevice) 
 
